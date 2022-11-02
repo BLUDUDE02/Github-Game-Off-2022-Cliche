@@ -1,6 +1,4 @@
-# Github-Game-Off-2022-Cliche
-
-## Cliche chosen: "I've got a bullet with your name on it"
+# Github-Game-Off-2022-Cliche - "I've got a bullet with your name on it"
 
 ### A game about bullets and investigation
 <GAME TITLE> will be a guess who/ FPS mashup featuring a top assassin who is tasked with killing those whose names are inscribed on the bullets of his revolver.
