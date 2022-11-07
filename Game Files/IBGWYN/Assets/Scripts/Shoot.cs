@@ -17,7 +17,7 @@ public class Shoot : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && ammo > 0 && canShoot)
+        if (Input.GetMouseButtonDown(0) && ammo > 0 && canShoot && Time.timeScale > 0)
         {
             Fire();
         }

@@ -12,12 +12,6 @@ public class MouseLook : MonoBehaviour
     float xRotation;
     float yRotation;
 
-    private void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
     private void Update()
     {
         //Get Mouse
