@@ -26,9 +26,11 @@ public class PlayerMovement : MonoBehaviour
     [Header("Public Variables")]
     public float speed;
     public Transform orientation;
+    public Animator anim;
 
     float horizIn;
     float vertIn;
+    bool isMoving;
     
 
     Vector3 moveDirection;
@@ -43,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        anim.SetFloat("Speed", rb.velocity.magnitude);
+        anim.SetBool("Moving", isMoving);
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundLayer);
 
         if (grounded)
@@ -81,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //Calculate direction
         moveDirection = orientation.forward * vertIn + orientation.right * horizIn;
+        isMoving = moveDirection.magnitude != 0 && grounded;
 
         //On the ground
         if (grounded)
