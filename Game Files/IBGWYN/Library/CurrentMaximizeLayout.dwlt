@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 939
-  m_MinSize: {x: 679, y: 471}
-  m_MaxSize: {x: 14001, y: 14021}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 2549
+  controlID: 6226
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,10 +135,10 @@ MonoBehaviour:
     y: 0
     width: 1382
     height: 939
-  m_MinSize: {x: 403, y: 471}
-  m_MaxSize: {x: 10000, y: 14021}
+  m_MinSize: {x: 403, y: 492}
+  m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 2407
+  controlID: 6186
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 2382
+  controlID: 6151
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -220,7 +220,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d0e7ffffe6f3ffff50fbffff76550000a6550000f8550000
+      m_ExpandedIDs: e4f8ffffeaf8ffffeef8ffff9cf9ffffbcf9ffffc8f9ffffccf9ffffcef9ffff50fbffff44560000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -308,9 +308,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 59.037468, y: -66.80977, z: -42.45094}
+    m_Target: {x: -0.9442221, y: 0.5064509, z: 0.9277353}
     speed: 2
-    m_Value: {x: 59.037468, y: -66.80977, z: -42.45094}
+    m_Value: {x: -0.9442221, y: 0.5064509, z: 0.9277353}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -357,13 +357,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.15717779, y: 0.83109397, z: -0.29305416, w: 0.44574958}
+    m_Target: {x: 0.087839186, y: 0.2742429, z: -0.025163451, w: 0.9573106}
     speed: 2
-    m_Value: {x: 0.15717815, y: 0.8310959, z: -0.29305482, w: 0.4457506}
+    m_Value: {x: 0.08783911, y: 0.27424267, z: -0.02516343, w: 0.95730984}
   m_Size:
-    m_Target: 67.557304
+    m_Target: 2.4247448
     speed: 2
-    m_Value: 67.557304
+    m_Value: 2.4247448
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -485,8 +485,8 @@ MonoBehaviour:
     y: 668
     width: 1382
     height: 271
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -533,22 +533,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Materials
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 90
   m_LastFolders:
-  - Assets
+  - Assets/Materials
   m_LastFoldersGridSize: 90
   m_LastProjectPath: D:\Games\Repos\Github-Game-Off-2022-Cliche\Game Files\IBGWYN
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 12}
-    m_SelectedIDs: 3c590000
-    m_LastClickedID: 22844
-    m_ExpandedIDs: 000000003c59000000ca9a3b
+    m_SelectedIDs: 02560000
+    m_LastClickedID: 22018
+    m_ExpandedIDs: 00000000d255000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -576,7 +576,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003c59000000ca9a3b
+    m_ExpandedIDs: 00000000d255000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -601,9 +601,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 44560000
+    m_LastClickedInstanceID: 22084
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000089300008a4c00004e49000074e00000624f0000864d0000ae1b000078760000b64b00007c5f0000521b000054e4fdff9c4a00006e74ffff4c4900007e4f0100964f0100ea5f00007059000056e00000805f000094810000484800005cd000007cad00001a4b0000d06400004c61010034500000e6c7ffff40380100607d0000b84d00005c4d0000ee760100ea7a0000febc0000d41b00002264faff00000000c42800004e580000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -684,7 +684,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 21926
+  m_LastSelectedObjectID: 22084
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -917,7 +917,7 @@ MonoBehaviour:
     m_CachedPref: -170
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -1
+  m_LastInspectedObjectInstanceID: 22084
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_LockTracker:

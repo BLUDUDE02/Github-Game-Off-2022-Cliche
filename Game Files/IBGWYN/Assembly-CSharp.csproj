@@ -57,13 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraPosition.cs" />
+    <Compile Include="Assets\Scripts\NPCBehavior.cs" />
     <Compile Include="Assets\Scripts\Destroy.cs" />
     <Compile Include="Assets\Scripts\infoScreen.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Shoot.cs" />
-    <Compile Include="Assets\Scripts\NPCBehavior.cs" />
+    <Compile Include="Assets\Scripts\Interaction.cs" />
+    <Compile Include="Assets\Scripts\NPCCommunication.cs" />
+    <Compile Include="Assets\Scripts\NPCData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
