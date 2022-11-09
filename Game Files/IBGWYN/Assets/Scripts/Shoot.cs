@@ -8,6 +8,7 @@ public class Shoot : MonoBehaviour
     public float range = 100;
     public int ammo = 6;
     public GameObject bulletHole;
+    public GameObject bulletHole2;
     public ParticleSystem flash;
     public Animator anim;
     public LayerMask layer;
@@ -34,7 +35,21 @@ public class Shoot : MonoBehaviour
         if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, range, layer))
         {
             Debug.Log(hitinfo.transform.name);
-            Instantiate(bulletHole, hitinfo.point, Quaternion.LookRotation(hitinfo.normal));
+            if (hitinfo.transform.tag == "NPC")
+            {
+                Instantiate(bulletHole2, hitinfo.point, Quaternion.LookRotation(hitinfo.normal), hitinfo.transform);
+                hitinfo.transform.GetComponentInParent<NPCBehavior>().Die(hitinfo.point);
+            }
+            else if(hitinfo.transform.tag == "Object")
+            {
+                Instantiate(bulletHole2, hitinfo.point, Quaternion.LookRotation(hitinfo.normal), hitinfo.transform);
+                hitinfo.transform.GetComponentInParent<Rigidbody>().AddExplosionForce(1000, hitinfo.point, 0.1f);
+            }
+            else
+            {
+                Instantiate(bulletHole, hitinfo.point, Quaternion.LookRotation(hitinfo.normal));
+            }
+            
         }
         StartCoroutine(cooldown());
     }

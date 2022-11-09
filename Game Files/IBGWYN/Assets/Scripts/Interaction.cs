@@ -9,12 +9,14 @@ public class Interaction : MonoBehaviour
     public float range = 3;
     public TextMeshProUGUI interactText;
     public TextMeshProUGUI factText;
+    public TextMeshProUGUI Subtitles;
 
     bool talk;
 
     private void Start()
     {
         factText.text = null;
+        Subtitles.text = null;
     }
     private void Update()
     {
@@ -23,7 +25,6 @@ public class Interaction : MonoBehaviour
         {
             if (hitinfo.transform.tag == "NPC")
             {
-                Debug.Log(hitinfo.transform.name);
                 talk = true;
             }
             else
@@ -35,17 +36,26 @@ public class Interaction : MonoBehaviour
 
         if (talk)
         {
-            interactText.text = hitinfo.transform.name + " [E]";
+            interactText.text = hitinfo.transform.GetComponentInParent<NPCData>().characterName + " [E]";
             if(Input.GetKeyDown(KeyCode.E))
             {
-                NPCData Target = new NPCData();
+                NPCData Target = hitinfo.transform.GetComponentInParent<NPCData>();
                 NPCCommunication activeNPC = hitinfo.transform.GetComponentInParent<NPCCommunication>();
-                factText.text += activeNPC.GenerateFact(Target);
+                string text = activeNPC.GenerateFact(Target);
+                factText.text += text;
+                Subtitles.text = text;
+                StartCoroutine(ClearText());
             }
         }
         else
         {
             interactText.text = null;
         }
+    }
+
+    IEnumerator ClearText()
+    {
+        yield return new WaitForSeconds(3f);
+        Subtitles.text = null;
     }
 }
