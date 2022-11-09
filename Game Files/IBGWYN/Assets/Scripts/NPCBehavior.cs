@@ -16,6 +16,7 @@ public class NPCBehavior : MonoBehaviour
                 rb.useGravity = true;
                 rb.interpolation = RigidbodyInterpolation.Interpolate;
                 rb.AddExplosionForce(1000, pos, 0.1f);
+                rb.transform.tag = "Object";
             }
             
         }
@@ -23,6 +24,6 @@ public class NPCBehavior : MonoBehaviour
         Destroy(transform.GetComponent<NPCBehavior>());
         Destroy(transform.GetComponent<NPCData>());
 
-        transform.tag = "Object";
+        
     }
 }
