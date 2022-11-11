@@ -38,9 +38,9 @@ public class Shoot : MonoBehaviour
             if (hitinfo.transform.tag == "NPC")
             {
                 Instantiate(bulletHole2, hitinfo.point, Quaternion.LookRotation(hitinfo.normal), hitinfo.transform);
-                if (hitinfo.transform.GetComponent<NPCData>().isTarget)
+                if (hitinfo.transform.GetComponentInParent<NPCData>().isTarget)
                 {
-                    GetComponent<Interaction>().Subtitles.text = "Holy shit you killed " + GetComponent<NPCData>().characterName + "!";
+                    GetComponent<Interaction>().Won();
                 }
                 hitinfo.transform.GetComponentInParent<NPCBehavior>().Die(hitinfo.point);
             }

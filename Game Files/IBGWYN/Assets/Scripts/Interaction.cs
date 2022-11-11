@@ -14,6 +14,7 @@ public class Interaction : MonoBehaviour
 
     List<int> factsobtained = new List<int>();
     bool talk;
+    bool won;
 
     public struct fact
     {
@@ -53,20 +54,30 @@ public class Interaction : MonoBehaviour
                 NPCBehavior activeNPC = hitinfo.transform.GetComponentInParent<NPCBehavior>();
                 fact Question = activeNPC.GenerateFact(gm.target);
                 
-                if(!factsobtained.Contains(Question.factint) && Question.factint < 2)
+                if(!factsobtained.Contains(Question.factint) && Question.factint < 4)
                 {
                     factText.text += "\n * " + Question.text;
                     factsobtained.Add(Question.factint);
                 }
-
-                Subtitles.text = Question.text;
-                StartCoroutine(ClearText());
+                
+                if(!won)
+                {
+                    Subtitles.text = Question.text;
+                    StartCoroutine(ClearText());
+                }
+                    
             }
         }
         else
         {
             interactText.text = null;
         }
+    }
+
+    public void Won()
+    {
+        won = true;
+        Subtitles.text = "Holy shit you killed " + gm.target.characterName + "!";
     }
 
     IEnumerator ClearText()

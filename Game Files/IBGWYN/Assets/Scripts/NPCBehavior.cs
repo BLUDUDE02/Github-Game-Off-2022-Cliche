@@ -10,11 +10,12 @@ public class NPCBehavior : MonoBehaviour
     public float wanderRadius;
     public float wanderTimer;
     public Color gizmoColor;
-    public TextMeshProUGUI Subtitles;
+
 
     private NavMeshAgent agent;
     private float timer;
 
+    int dialoguenum = 99;
 
     // Use this for initialization
     void OnEnable()
@@ -54,7 +55,16 @@ public class NPCBehavior : MonoBehaviour
     {
         Interaction.fact answer;
         StartCoroutine(stopForASec());
-        int choice = Random.Range(0, 3);
+        int choice = Random.Range(0, 6);
+        if(dialoguenum == 99)
+        {
+            dialoguenum = choice;
+        }
+        else
+        {
+            choice = dialoguenum;
+        }
+
         answer.factint = choice;
         if (choice == 0)
         {
@@ -63,6 +73,14 @@ public class NPCBehavior : MonoBehaviour
         else if (choice == 1)
         {
             answer.text = starters[Random.Range(0, starters.Length)] + target.characterName + ". They're pretty " + (target.height > 1 ? "short" : target.height == 1 ? "average height" : "tall") + ".";
+        }
+        else if (choice == 2)
+        {
+            answer.text = starters[Random.Range(0, starters.Length)] + target.characterName + ". They have a " + (target.color1) + " head .";
+        }
+        else if (choice == 3)
+        {
+            answer.text = starters[Random.Range(0, starters.Length)] + target.characterName + ". They have a " + (target.color2) + " body .";
         }
         else
         {
@@ -74,11 +92,6 @@ public class NPCBehavior : MonoBehaviour
 
     public void Die(Vector3 pos)
     {
-        if (GetComponent<NPCData>().isTarget)
-        {
-            Subtitles.text = "Holy shit you killed " + GetComponent<NPCData>().characterName + "!";
-        }
-
         Transform[] parts = GetComponentsInChildren<Transform>();
         foreach (Transform p in parts)
         {
@@ -92,8 +105,12 @@ public class NPCBehavior : MonoBehaviour
             }
             
         }
+        Invoke("Delete", 0.1f);
         
+    }
 
+    void Delete()
+    {
         Destroy(transform.GetComponent<NavMeshAgent>());
         Destroy(transform.GetComponent<NPCBehavior>());
         Destroy(transform.GetComponent<NPCData>());
