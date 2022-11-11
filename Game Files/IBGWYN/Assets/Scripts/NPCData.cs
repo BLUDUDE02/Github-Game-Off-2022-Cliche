@@ -7,16 +7,20 @@ public class NPCData : MonoBehaviour
     [Header("Character Info")]
     public string characterName;
     public string favoriteFood;
+    public GameManager gm;
     
     public float height;
     public GameObject Head;
     public GameObject Body;
+
+    public bool isTarget;
 
     Color colorHead;
     Color colorBody;
 
     private void Awake()
     {
+        gm = FindObjectOfType<GameManager>();
         Generate();
     }
 
@@ -45,6 +49,9 @@ public class NPCData : MonoBehaviour
 
     void PickFaves()
     {
-        favoriteFood = "corn";
+        DataDictionary dictionary = new DataDictionary();
+        characterName = dictionary.Fnames[Random.Range(0, dictionary.Fnames.Length - 1)] + " " +
+            dictionary.Lnames[Random.Range(0, dictionary.Lnames.Length - 1)];
+        favoriteFood = dictionary.Foods[Random.Range(0, dictionary.Foods.Length - 1)];
     }
 }

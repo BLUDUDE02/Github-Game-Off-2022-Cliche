@@ -10,13 +10,23 @@ public class Interaction : MonoBehaviour
     public TextMeshProUGUI interactText;
     public TextMeshProUGUI factText;
     public TextMeshProUGUI Subtitles;
+    public GameManager gm;
 
+    List<int> factsobtained = new List<int>();
     bool talk;
+
+    public struct fact
+    {
+        public string text;
+        public int factint;
+    }
 
     private void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         factText.text = null;
         Subtitles.text = null;
+
     }
     private void Update()
     {
@@ -36,14 +46,20 @@ public class Interaction : MonoBehaviour
 
         if (talk)
         {
-            interactText.text = hitinfo.transform.GetComponentInParent<NPCData>().characterName + " [E]";
+            interactText.text ="talk [E]";
             if(Input.GetKeyDown(KeyCode.E))
             {
-                NPCData Target = hitinfo.transform.GetComponentInParent<NPCData>();
-                NPCCommunication activeNPC = hitinfo.transform.GetComponentInParent<NPCCommunication>();
-                string text = activeNPC.GenerateFact(Target);
-                factText.text += text;
-                Subtitles.text = text;
+                
+                NPCBehavior activeNPC = hitinfo.transform.GetComponentInParent<NPCBehavior>();
+                fact Question = activeNPC.GenerateFact(gm.target);
+                
+                if(!factsobtained.Contains(Question.factint) && Question.factint < 2)
+                {
+                    factText.text += "\n * " + Question.text;
+                    factsobtained.Add(Question.factint);
+                }
+
+                Subtitles.text = Question.text;
                 StartCoroutine(ClearText());
             }
         }
