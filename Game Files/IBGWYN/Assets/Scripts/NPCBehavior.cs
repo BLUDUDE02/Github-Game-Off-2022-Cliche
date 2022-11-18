@@ -10,6 +10,7 @@ public class NPCBehavior : MonoBehaviour
     public float wanderRadius;
     public float wanderTimer;
     public Color gizmoColor;
+    public Animator anim;
 
 
     private NavMeshAgent agent;
@@ -35,6 +36,9 @@ public class NPCBehavior : MonoBehaviour
             agent.SetDestination(newPos);
             timer = 0;
         }
+
+        anim.SetBool("Moving", Vector3.Distance(transform.position, agent.destination) > agent.stoppingDistance && !agent.isStopped ? true: false);
+        anim.speed = agent.speed;
     }
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
@@ -80,7 +84,7 @@ public class NPCBehavior : MonoBehaviour
         }
         else if (choice == 3)
         {
-            answer.text = starters[Random.Range(0, starters.Length)] + target.characterName + ". They have a " + (target.color2) + " body .";
+            answer.text = starters[Random.Range(0, starters.Length)] + target.characterName + ". They're wearing a " + (target.color2) + " shirt .";
         }
         else
         {
@@ -95,7 +99,8 @@ public class NPCBehavior : MonoBehaviour
         Transform[] parts = GetComponentsInChildren<Transform>();
         foreach (Transform p in parts)
         {
-            if(p.GetComponent<MeshRenderer>())
+            anim.SetBool("Moving", false);
+            if(p.GetComponent<Collider>())
             {
                 Rigidbody rb = p.gameObject.AddComponent<Rigidbody>();
                 rb.useGravity = true;
@@ -114,12 +119,13 @@ public class NPCBehavior : MonoBehaviour
         Destroy(transform.GetComponent<NavMeshAgent>());
         Destroy(transform.GetComponent<NPCBehavior>());
         Destroy(transform.GetComponent<NPCData>());
+        Destroy(anim);
     }
 
     IEnumerator stopForASec()
     {
         agent.isStopped = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         agent.isStopped = false;
     }
 

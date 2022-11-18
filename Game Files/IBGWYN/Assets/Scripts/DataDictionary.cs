@@ -16,5 +16,6 @@ public class DataDictionary : MonoBehaviour
         "cayenne pepper", "shitakes", "melons", "berries", "gorgonzola", "Cappuccino Latte",
         "rice", "tea", "Canadian bacon", "chard", "green onions", "plum tomatoes", "cornstarch",
         "broccoli", "okra", "paprika", "cream" };
-    public string[] Colors = {"red", "yellow", "green", "blue", "cyan", "white", "black", "grey", "magenta"};
+    public string[] Colors = {"red", "yellow", "green", "blue", "cyan", "white", "black", "magenta"};
+    public Texture[] BodyTextures;
 }

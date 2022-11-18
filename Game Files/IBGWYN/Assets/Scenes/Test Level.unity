@@ -7706,6 +7706,7 @@ GameObject:
   - component: {fileID: 1475214248}
   - component: {fileID: 1475214250}
   - component: {fileID: 1475214249}
+  - component: {fileID: 1475214251}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -7775,6 +7776,121 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475214247}
   m_CullTransparentMesh: 1
+--- !u!114 &1475214251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475214247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3d6c3aa00e19245a2b33e8cff8a4be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Fnames:
+  - Pyscho
+  - Bridge
+  - LaLa
+  - Dimpling
+  - Big Guy
+  - Fifi
+  - Bandit
+  - Chubs
+  - Beast
+  - Slim
+  - Boomhauer
+  - MomBod
+  - Honeybun
+  - Dirty Harry
+  - Dud
+  - Turkey
+  - Elf
+  - Big Mac
+  - Sunny
+  - Kitty
+  - Dummy
+  - Winnie
+  - Cello
+  - Cricket
+  - Betty Boop
+  - Janitor
+  - Ms. Congeniality
+  - Bacon
+  - Silly Gilly
+  - Chance
+  Lnames:
+  - Larson
+  - Gordon
+  - Malone
+  - Carpenter
+  - Mcclure
+  - Rasmussen
+  - Gilbert
+  - Irwin
+  - Hurley
+  - Villanueva
+  - Trevino
+  - Norris
+  - Fisher
+  - Mata
+  - Elliott
+  - Andrade
+  - Whitaker
+  - Riddle
+  - Bryan
+  - Poole
+  - Cabrera
+  - Friedman
+  - Neal
+  - Hatfield
+  - Stevens
+  - Bender
+  - Knapp
+  - Mcclain
+  - Gallegos
+  - Joyce
+  Foods:
+  - kumquats
+  - black olives
+  - spinach
+  - prawns
+  - corn syrup
+  - vegemite
+  - hoisin sauce
+  - chambord
+  - white beans
+  - duck
+  - beer
+  - feta cheese
+  - garlic
+  - cayenne pepper
+  - shitakes
+  - melons
+  - berries
+  - gorgonzola
+  - Cappuccino Latte
+  - rice
+  - tea
+  - Canadian bacon
+  - chard
+  - green onions
+  - plum tomatoes
+  - cornstarch
+  - broccoli
+  - okra
+  - paprika
+  - cream
+  Colors:
+  - red
+  - yellow
+  - green
+  - blue
+  - cyan
+  - white
+  - black
+  - magenta
+  BodyTextures: []
 --- !u!1 &1484514660
 GameObject:
   m_ObjectHideFlags: 0
@@ -8931,7 +9047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 100
-  ammo: 6
+  ammo: 100
   bulletHole: {fileID: 737559904481676715, guid: 30b3f8ab19c84134c812e72f3475ae3c, type: 3}
   bulletHole2: {fileID: 7237555753614351497, guid: 30cacb75c96186144910b794a3da6123, type: 3}
   flash: {fileID: 250804724}

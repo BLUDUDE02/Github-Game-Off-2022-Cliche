@@ -10,6 +10,8 @@ public class NPCData : MonoBehaviour
     public GameManager gm;
     public string color1;
     public string color2;
+    public Texture body;
+    public Texture head;
 
     public float height;
     public GameObject Head;
@@ -40,7 +42,7 @@ public class NPCData : MonoBehaviour
 
     void PickFaves()
     {
-        DataDictionary dictionary = new DataDictionary();
+        DataDictionary dictionary = GetComponent<DataDictionary>();
         characterName = dictionary.Fnames[Random.Range(0, dictionary.Fnames.Length - 1)] + " " +
             dictionary.Lnames[Random.Range(0, dictionary.Lnames.Length - 1)];
         favoriteFood = dictionary.Foods[Random.Range(0, dictionary.Foods.Length - 1)];
@@ -51,7 +53,8 @@ public class NPCData : MonoBehaviour
         color2 = dictionary.Colors[b];
 
         Head.GetComponent<Renderer>().material.color = toColor(a);
-        Body.GetComponent<Renderer>().material.color = toColor(b);
+        body = dictionary.BodyTextures[b];
+        Body.GetComponentInChildren<Renderer>().material.SetTexture("_BaseMap", body);
     }
 
     public Color toColor(int color)
@@ -74,8 +77,6 @@ public class NPCData : MonoBehaviour
                 return Color.black;
             case 8:
                 return Color.magenta;
-            case 9:
-                return Color.grey;
             default:
                 return Color.white;
         }
