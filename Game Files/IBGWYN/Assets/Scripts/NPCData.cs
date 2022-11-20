@@ -32,7 +32,7 @@ public class NPCData : MonoBehaviour
 
     void SetHeight()
     {
-        height = Random.Range(0.75f, 1.3f);
+        height = Random.Range(0.9f, 1.1f);
         transform.localScale *= height;
     }
 

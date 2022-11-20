@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [Header("Settings")]
     public GameObject NPC;
     public float spawnRadius = 5;
-    public int Quantity = 10;
+    public int Quantity = 1;
     public List<NPCData> NPCs = new List<NPCData>();
     public NPCData target;
     public TextMeshProUGUI bullet;
