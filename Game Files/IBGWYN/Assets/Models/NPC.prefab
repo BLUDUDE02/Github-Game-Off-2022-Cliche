@@ -212,7 +212,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7523090648501768723}
-  - component: {fileID: 6322993262934585676}
   m_Layer: 0
   m_Name: Thigh.R
   m_TagString: Untagged
@@ -235,20 +234,6 @@ Transform:
   m_Father: {fileID: 6192177087256050422}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &6322993262934585676
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439454562098211082}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.0023647633
-  m_Height: 0.007882544
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.003941272, z: 0}
 --- !u!1 &799645920406137998
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +395,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2367313013003562560}
-  - component: {fileID: 7331455791142361108}
   m_Layer: 0
   m_Name: Shin.R
   m_TagString: Untagged
@@ -433,20 +417,6 @@ Transform:
   m_Father: {fileID: 7523090648501768723}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &7331455791142361108
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1403424039716490706}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.0024296886
-  m_Height: 0.009718754
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.004859377, z: 0}
 --- !u!1 &1418356287567534003
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,6 +492,7 @@ GameObject:
   - component: {fileID: 1446002354308148259}
   - component: {fileID: 1446002354308148268}
   - component: {fileID: 3677612008358324147}
+  - component: {fileID: 6449709133813649719}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -583,6 +554,9 @@ MonoBehaviour:
   gizmoColor: {r: 0, g: 1, b: 0.18209982, a: 0.24705882}
   anim: {fileID: 4980864382914965786}
   Explosion: {fileID: 5732543660077996308}
+  tryingToSit: 1
+  CanSit: 0
+  chairs: []
 --- !u!114 &1446002354308148259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,12 +708,26 @@ MonoBehaviour:
   BodyTextures:
   - {fileID: 2800000, guid: f83ddc7fff7662647ab3893c74b021bc, type: 3}
   - {fileID: 2800000, guid: f89bd9661271c364ab2123abdb449a6e, type: 3}
+  - {fileID: 2800000, guid: edd4c40da01cb6544888473ef7c1fc8f, type: 3}
   - {fileID: 2800000, guid: 34ebab093c07b974d9d35cb7025e144a, type: 3}
   - {fileID: 2800000, guid: 238c11b26f8412045ae0a66a7fd933ee, type: 3}
-  - {fileID: 2800000, guid: edd4c40da01cb6544888473ef7c1fc8f, type: 3}
   - {fileID: 2800000, guid: 490a9133bea4b284eb3aae1926ec7c00, type: 3}
   - {fileID: 2800000, guid: 235302b658da2f94fa9dbf6574b9796c, type: 3}
   - {fileID: 2800000, guid: 14946ca6361bdf04ab91ba685c8bc1a1, type: 3}
+--- !u!136 &6449709133813649719
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446002354308148263}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1446002354817653171
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +737,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1446002354817653180}
-  - component: {fileID: 7377619990498451993}
   m_Layer: 0
   m_Name: Body
   m_TagString: NPC
@@ -772,20 +759,6 @@ Transform:
   m_Father: {fileID: 1446002354308148256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &7377619990498451993
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446002354817653171}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2.02
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1663237660107119400
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,7 +829,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3084428277965229072}
-  - component: {fileID: 5106211198875087270}
   m_Layer: 0
   m_Name: Forearm.R
   m_TagString: Untagged
@@ -879,20 +851,6 @@ Transform:
   m_Father: {fileID: 5715247465291791562}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &5106211198875087270
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2170842664764491979}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.0023759403
-  m_Height: 0.011879701
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.0059398506, z: 0}
 --- !u!1 &2210593541767779718
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,7 +953,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4383830944703508844}
-  - component: {fileID: 3599915610320689697}
   m_Layer: 0
   m_Name: Thigh.L
   m_TagString: Untagged
@@ -1018,20 +975,6 @@ Transform:
   m_Father: {fileID: 9181012846928949222}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &3599915610320689697
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3075354867770280372}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.0023647638
-  m_Height: 0.007882546
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.003941273, z: 0}
 --- !u!1 &3183997632592851084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,7 +1107,6 @@ GameObject:
   - component: {fileID: 778971602626118080}
   - component: {fileID: 8300740060483483486}
   - component: {fileID: 447029477300808577}
-  - component: {fileID: 2771290672386293789}
   m_Layer: 0
   m_Name: Head
   m_TagString: NPC
@@ -1236,20 +1178,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2771290672386293789
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3654683092723420970}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 76120b204ca05c24289ca0eb7e8e03a4, type: 3}
 --- !u!1 &3819564215475686506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,7 +1357,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9184873314612370026}
-  - component: {fileID: 3050369234793718111}
   m_Layer: 0
   m_Name: Shin.L
   m_TagString: Untagged
@@ -1452,20 +1379,6 @@ Transform:
   m_Father: {fileID: 4383830944703508844}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &3050369234793718111
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4982325417736715734}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.0024296888
-  m_Height: 0.009718755
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.0048593776, z: 0}
 --- !u!1 &5243444715641518466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,7 +1547,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8640904621419958389}
-  - component: {fileID: 4425819762395289434}
   m_Layer: 0
   m_Name: Hips
   m_TagString: NPC
@@ -1659,19 +1571,6 @@ Transform:
   m_Father: {fileID: 4557485379987288998}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4425819762395289434
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5728369640808825391}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.01010699, y: 0.0055129044, z: 0.008511191}
-  m_Center: {x: 0, y: 0.0027564524, z: -0.0000000018626451}
 --- !u!1 &5732543659499047353
 GameObject:
   m_ObjectHideFlags: 0
@@ -60142,7 +60041,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5715247465291791562}
-  - component: {fileID: 1367071540056338234}
   m_Layer: 0
   m_Name: Bicep.R
   m_TagString: Untagged
@@ -60165,20 +60063,6 @@ Transform:
   m_Father: {fileID: 293930029704889185}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 18.8, y: -51.054, z: 1.9}
---- !u!136 &1367071540056338234
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6033767036624856752}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.0014806761
-  m_Height: 0.0059227045
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.0029613522, z: 0}
 --- !u!1 &6113112925588297366
 GameObject:
   m_ObjectHideFlags: 0
@@ -60188,7 +60072,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8710386466994996768}
-  - component: {fileID: 4991402258089923744}
   m_Layer: 0
   m_Name: Forearm.L
   m_TagString: Untagged
@@ -60211,20 +60094,6 @@ Transform:
   m_Father: {fileID: 1492570282544214151}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &4991402258089923744
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6113112925588297366}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.0023759403
-  m_Height: 0.011879701
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.0059398506, z: 0}
 --- !u!1 &6187282459078970638
 GameObject:
   m_ObjectHideFlags: 0
@@ -60272,7 +60141,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1492570282544214151}
-  - component: {fileID: 3659444205527654855}
   m_Layer: 0
   m_Name: Bicep.L
   m_TagString: Untagged
@@ -60295,20 +60163,6 @@ Transform:
   m_Father: {fileID: 162096205189915763}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 16.2, y: 51.054, z: 6.7}
---- !u!136 &3659444205527654855
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6223479860627305434}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.0014806761
-  m_Height: 0.0059227045
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.0029613522, z: 0}
 --- !u!1 &8156989312670292355
 GameObject:
   m_ObjectHideFlags: 0

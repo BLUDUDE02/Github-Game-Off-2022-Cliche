@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 7512565398274989364}
   - component: {fileID: 5435013235794363236}
   - component: {fileID: 5435013235794363259}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cubicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

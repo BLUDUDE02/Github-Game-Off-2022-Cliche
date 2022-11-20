@@ -13,6 +13,7 @@ public class Shoot : MonoBehaviour
     public Animator anim;
     public LayerMask layer;
     public AudioSource source;
+    public Camera cam;
 
     bool canShoot = true;
 
@@ -32,10 +33,10 @@ public class Shoot : MonoBehaviour
         ammo -= 1;
         canShoot = false;
         RaycastHit hitinfo;
-        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, range, layer))
+        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hitinfo, range, layer))
         {
             Debug.Log(hitinfo.transform.name);
-            if (hitinfo.transform.tag == "NPC")
+            if (hitinfo.transform.CompareTag("NPC"))
             {
                 Instantiate(bulletHole2, hitinfo.point, Quaternion.LookRotation(hitinfo.normal), hitinfo.transform);
                 if (hitinfo.transform.GetComponentInParent<NPCData>().isTarget)
@@ -43,11 +44,6 @@ public class Shoot : MonoBehaviour
                     GetComponent<Interaction>().Won();
                 }
                 hitinfo.transform.GetComponentInParent<NPCBehavior>().Die(hitinfo.point);
-            }
-            else if(hitinfo.transform.tag == "Object")
-            {
-                Instantiate(bulletHole2, hitinfo.point, Quaternion.LookRotation(hitinfo.normal), hitinfo.transform);
-                hitinfo.transform.GetComponentInParent<Rigidbody>().AddExplosionForce(1000, hitinfo.point, 0.1f);
             }
             else
             {

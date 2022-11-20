@@ -12,6 +12,7 @@ public class Interaction : MonoBehaviour
     public TextMeshProUGUI Subtitles;
     public GameManager gm;
     public ParticleSystem win;
+    public Camera cam;
 
     List<int> factsobtained = new List<int>();
     bool talk;
@@ -30,12 +31,13 @@ public class Interaction : MonoBehaviour
         Subtitles.text = null;
 
     }
-    private void Update()
+    private void FixedUpdate()
     {
         RaycastHit hitinfo;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, range))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hitinfo, range))
         {
-            if (hitinfo.transform.tag == "NPC")
+            Debug.Log("Raycast hit");
+            if (hitinfo.transform.CompareTag("NPC"))
             {
                 talk = true;
             }

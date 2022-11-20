@@ -45,33 +45,7 @@ public class NPCData : MonoBehaviour
 
         int b = Random.Range(0, dictionary.Colors.Length - 1);
         color2 = dictionary.Colors[b];
-
         body = dictionary.BodyTextures[b];
         Body.GetComponentInChildren<Renderer>().material.SetTexture("_BaseMap", body);
-    }
-
-    public Color toColor(int color)
-    {
-        switch (color)
-        {
-            case 1:
-                return Color.red;
-            case 2:
-                return Color.yellow;
-            case 3:
-                return Color.blue;
-            case 4:
-                return Color.cyan;
-            case 5:
-                return Color.green;
-            case 6:
-                return Color.white;
-            case 7:
-                return Color.black;
-            case 8:
-                return Color.magenta;
-            default:
-                return Color.white;
-        }
     }
 }

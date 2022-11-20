@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     void spawnInCircle()
     {
-        Vector3 pos = new Vector3((Random.insideUnitCircle * spawnRadius).x, 0, (Random.insideUnitCircle * spawnRadius).y);
+        Vector3 pos = new Vector3((Random.insideUnitCircle * spawnRadius).x + transform.position.x, 0, (Random.insideUnitCircle * spawnRadius).y + transform.position.y);
         GameObject Character = Instantiate(NPC, pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
         NPCs.Add(Character.GetComponent<NPCData>());
     }

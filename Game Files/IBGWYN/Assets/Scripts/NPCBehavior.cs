@@ -16,6 +16,7 @@ public class NPCBehavior : MonoBehaviour
 
     private NavMeshAgent agent;
     private float timer;
+    private float chairtimer;
     public bool tryingToSit = true;
     public bool CanSit;
 
@@ -49,10 +50,6 @@ public class NPCBehavior : MonoBehaviour
         {
             goToChair();
         }
-
-        
-
-
         anim.SetBool("Moving", Vector3.Distance(transform.position, agent.destination) > agent.stoppingDistance && !agent.isStopped ? true: false);
         anim.speed = agent.speed;
     }
@@ -87,6 +84,7 @@ public class NPCBehavior : MonoBehaviour
                         smallestdist = dist;
                         Target = t.GetComponentInChildren<target>().gameObject;
                         Target.GetComponent<target>().used = true;
+                        Target.GetComponent<target>().NPC = gameObject;
                         CanSit = true;
                         tryingToSit = false;
                     }
@@ -97,15 +95,24 @@ public class NPCBehavior : MonoBehaviour
 
     void goToChair()
     {
+        chairtimer += Time.deltaTime;
         agent.SetDestination(Target.transform.position);
 
-        if (agent.remainingDistance <= agent.stoppingDistance)
+        if (timer >= 5)
         {
-            agent.isStopped = true;
-            transform.position = Target.transform.position;
-            transform.rotation = Target.transform.rotation;
-            anim.SetBool("sitting", true);
-            StartCoroutine(sit());
+            StartCoroutine(waitToSit());
+            timer = 0;
+        }
+        else
+        {
+            if (agent.remainingDistance <= agent.stoppingDistance)
+            {
+                agent.isStopped = true;
+                transform.position = Target.transform.position;
+                transform.rotation = Target.transform.rotation;
+                anim.SetBool("sitting", true);
+                StartCoroutine(sit());
+            }
         }
     }
     private void LateUpdate()
@@ -201,9 +208,12 @@ public class NPCBehavior : MonoBehaviour
 
     IEnumerator waitToSit()
     {
+        agent.isStopped = false;
+        CanSit = false;
         yield return new WaitForSeconds(10f);
         tryingToSit = true;
         Target.GetComponent<target>().used = false;
+        Target.GetComponent<target>().NPC = null;
     }
 
     [ExecuteAlways]

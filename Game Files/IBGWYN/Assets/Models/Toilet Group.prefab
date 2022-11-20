@@ -1,0 +1,410 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1028999423350797175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6526903678631552060}
+  m_Layer: 0
+  m_Name: Toilet Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6526903678631552060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028999423350797175}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.4, y: 0.48, z: 10.62}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6209773935770969754}
+  - {fileID: 3978504325400599803}
+  - {fileID: 506745816347667223}
+  - {fileID: 7073497632042180138}
+  - {fileID: 4072673540346208411}
+  - {fileID: 623397541857884220}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &424833658088375498
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6526903678631552060}
+    m_Modifications:
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 695469657554810215, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_Name
+      value: Toilet Cubicle (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+--- !u!4 &506745816347667223 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+  m_PrefabInstance: {fileID: 424833658088375498}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &741930201900373985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6526903678631552060}
+    m_Modifications:
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 695469657554810215, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_Name
+      value: Toilet Cubicle (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+--- !u!4 &623397541857884220 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+  m_PrefabInstance: {fileID: 741930201900373985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3880803042457957158
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6526903678631552060}
+    m_Modifications:
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 695469657554810215, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_Name
+      value: Toilet Cubicle (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+--- !u!4 &3978504325400599803 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+  m_PrefabInstance: {fileID: 3880803042457957158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4208638407487409990
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6526903678631552060}
+    m_Modifications:
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 695469657554810215, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_Name
+      value: Toilet Cubicle (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+--- !u!4 &4072673540346208411 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+  m_PrefabInstance: {fileID: 4208638407487409990}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6107040708335896903
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6526903678631552060}
+    m_Modifications:
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 695469657554810215, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_Name
+      value: Toilet Cubicle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+--- !u!4 &6209773935770969754 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+  m_PrefabInstance: {fileID: 6107040708335896903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6973544515459969527
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6526903678631552060}
+    m_Modifications:
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 695469657554810215, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+      propertyPath: m_Name
+      value: Toilet Cubicle (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+--- !u!4 &7073497632042180138 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 210857006723870685, guid: d444879ac7a4b494f8bc990ec2e8923f, type: 3}
+  m_PrefabInstance: {fileID: 6973544515459969527}
+  m_PrefabAsset: {fileID: 0}
