@@ -11,6 +11,7 @@ public class NPCBehavior : MonoBehaviour
     public float wanderTimer;
     public Color gizmoColor;
     public Animator anim;
+    public ParticleSystem Explosion;
 
 
     private NavMeshAgent agent;
@@ -23,6 +24,7 @@ public class NPCBehavior : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
+        agent.updateRotation = false;
     }
 
     // Update is called once per frame
@@ -41,6 +43,12 @@ public class NPCBehavior : MonoBehaviour
         anim.speed = agent.speed;
     }
 
+    private void LateUpdate()
+    {
+        if(!agent.isStopped)
+            transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+    }
+
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
     {
         Vector3 randDirection = Random.insideUnitSphere * dist;
@@ -54,12 +62,14 @@ public class NPCBehavior : MonoBehaviour
         return navHit.position;
     }
 
+    #region Interactions
+
     string[] starters = { "Oh yeah I know ", "Let me tell ya about ", "Here's what I know about " };
     public Interaction.fact GenerateFact(NPCData target)
     {
         Interaction.fact answer;
         StartCoroutine(stopForASec());
-        int choice = Random.Range(0, 6);
+        int choice = Random.Range(0, 5);
         if(dialoguenum == 99)
         {
             dialoguenum = choice;
@@ -80,10 +90,6 @@ public class NPCBehavior : MonoBehaviour
         }
         else if (choice == 2)
         {
-            answer.text = starters[Random.Range(0, starters.Length)] + target.characterName + ". They have a " + (target.color1) + " head .";
-        }
-        else if (choice == 3)
-        {
             answer.text = starters[Random.Range(0, starters.Length)] + target.characterName + ". They're wearing a " + (target.color2) + " shirt .";
         }
         else
@@ -94,32 +100,22 @@ public class NPCBehavior : MonoBehaviour
 
     }
 
+    #endregion
+
     public void Die(Vector3 pos)
     {
-        Transform[] parts = GetComponentsInChildren<Transform>();
-        foreach (Transform p in parts)
-        {
-            anim.SetBool("Moving", false);
-            if(p.GetComponent<Collider>())
-            {
-                Rigidbody rb = p.gameObject.AddComponent<Rigidbody>();
-                rb.useGravity = true;
-                rb.interpolation = RigidbodyInterpolation.Interpolate;
-                rb.AddExplosionForce(1000, pos, 0.1f);
-                rb.transform.tag = "Object";
-            }
-            
-        }
         Invoke("Delete", 0.1f);
-        
+        Explosion.Play();
     }
 
     void Delete()
     {
-        Destroy(transform.GetComponent<NavMeshAgent>());
-        Destroy(transform.GetComponent<NPCBehavior>());
-        Destroy(transform.GetComponent<NPCData>());
-        Destroy(anim);
+        Explosion.gameObject.transform.parent = null;
+        foreach (Component child in GetComponentsInChildren(typeof(Component)))
+        {
+            Destroy(child.gameObject);
+        }
+        
     }
 
     IEnumerator stopForASec()

@@ -8,7 +8,6 @@ public class NPCData : MonoBehaviour
     public string characterName;
     public string favoriteFood;
     public GameManager gm;
-    public string color1;
     public string color2;
     public Texture body;
     public Texture head;
@@ -18,9 +17,6 @@ public class NPCData : MonoBehaviour
     public GameObject Body;
 
     public bool isTarget = false;
-
-    Color colorHead;
-    Color colorBody;
 
     private void Awake()
     {
@@ -47,12 +43,9 @@ public class NPCData : MonoBehaviour
             dictionary.Lnames[Random.Range(0, dictionary.Lnames.Length - 1)];
         favoriteFood = dictionary.Foods[Random.Range(0, dictionary.Foods.Length - 1)];
 
-        int a = Random.Range(0, dictionary.Colors.Length - 1);
         int b = Random.Range(0, dictionary.Colors.Length - 1);
-        color1 = dictionary.Colors[a];
         color2 = dictionary.Colors[b];
 
-        Head.GetComponent<Renderer>().material.color = toColor(a);
         body = dictionary.BodyTextures[b];
         Body.GetComponentInChildren<Renderer>().material.SetTexture("_BaseMap", body);
     }
