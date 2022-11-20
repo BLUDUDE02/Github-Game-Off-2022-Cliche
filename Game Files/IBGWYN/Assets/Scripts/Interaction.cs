@@ -55,7 +55,7 @@ public class Interaction : MonoBehaviour
                 NPCBehavior activeNPC = hitinfo.transform.GetComponentInParent<NPCBehavior>();
                 fact Question = activeNPC.GenerateFact(gm.target);
                 
-                if(!factsobtained.Contains(Question.factint) && Question.factint < 4)
+                if(!factsobtained.Contains(Question.factint) && Question.factint < 3)
                 {
                     factText.text += "\n * " + Question.text;
                     factsobtained.Add(Question.factint);
