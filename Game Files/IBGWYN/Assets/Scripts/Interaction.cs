@@ -11,6 +11,7 @@ public class Interaction : MonoBehaviour
     public TextMeshProUGUI factText;
     public TextMeshProUGUI Subtitles;
     public GameManager gm;
+    public ParticleSystem win;
 
     List<int> factsobtained = new List<int>();
     bool talk;
@@ -78,6 +79,7 @@ public class Interaction : MonoBehaviour
     {
         won = true;
         Subtitles.text = "Holy shit you killed " + gm.target.characterName + "!";
+        win.Play();
     }
 
     IEnumerator ClearText()
