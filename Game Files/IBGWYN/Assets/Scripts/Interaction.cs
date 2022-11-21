@@ -31,7 +31,7 @@ public class Interaction : MonoBehaviour
         Subtitles.text = null;
 
     }
-    private void FixedUpdate()
+    private void Update()
     {
         RaycastHit hitinfo;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hitinfo, range))
