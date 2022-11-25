@@ -41,7 +41,7 @@ public class NPCData : MonoBehaviour
         DataDictionary dictionary = GetComponent<DataDictionary>();
         characterName = dictionary.Fnames[Random.Range(0, dictionary.Fnames.Length - 1)] + " " +
             dictionary.Lnames[Random.Range(0, dictionary.Lnames.Length - 1)];
-        favoriteFood = dictionary.Foods[Random.Range(0, dictionary.Foods.Length - 1)];
+        favoriteFood = dictionary.Places[Random.Range(0, dictionary.Places.Length - 1)];
 
         int b = Random.Range(0, dictionary.Colors.Length - 1);
         color2 = dictionary.Colors[b];

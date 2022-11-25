@@ -33,6 +33,8 @@ public class PauseMenu : MonoBehaviour
             Cursor.lockState = pause ? CursorLockMode.None : CursorLockMode.Locked;
             Cursor.visible = pause;
 
+            AudioListener.pause = pause;
+
             Time.timeScale = pause ? 0 : 1;
         }
     }

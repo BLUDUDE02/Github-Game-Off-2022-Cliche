@@ -11,11 +11,28 @@ public class DataDictionary : MonoBehaviour
         "Gilbert", "Irwin", "Hurley", "Villanueva", "Trevino", "Norris", "Fisher", "Mata", "Elliott",
         "Andrade", "Whitaker", "Riddle", "Bryan", "Poole", "Cabrera", "Friedman", "Neal", "Hatfield",
         "Stevens", "Bender", "Knapp", "Mcclain", "Gallegos", "Joyce" };
-    public string[] Foods = { "kumquats", "black olives", "spinach", "prawns", "corn syrup", "vegemite",
-        "hoisin sauce", "chambord", "white beans", "duck", "beer", "feta cheese", "garlic",
-        "cayenne pepper", "shitakes", "melons", "berries", "gorgonzola", "Cappuccino Latte",
-        "rice", "tea", "Canadian bacon", "chard", "green onions", "plum tomatoes", "cornstarch",
-        "broccoli", "okra", "paprika", "cream" };
+    public string[] Places = {"Break room", "Conference Room", "Main Floor", "Bathroom"};
     public string[] Colors = {"red", "yellow", "green", "blue", "cyan", "white", "black", "magenta"};
     public Texture[] BodyTextures;
+    public AudioClip[] RED;
+    public AudioClip[] YELLOW;
+    public AudioClip[] GREEN;
+    public AudioClip[] BLUE;
+    public AudioClip[] CYAN;
+    public AudioClip[] WHITE;
+    public AudioClip[] BLACK;
+    public AudioClip[] MAGENTA;
+    public AudioClip[] Pooping;
+    public AudioClip[] IDontKnow;
+    public AudioClip[] Tall;
+    public AudioClip[] Short;
+    public AudioClip BreakRoom;
+    public AudioClip Conference;
+    public AudioClip Office;
+    public AudioClip Bathroom;
+    public AudioClip Bumping;
+    public AudioClip Moving;
+    public AudioClip OhNo;
+    public AudioClip Same;
+    public AudioClip Workin;
 }

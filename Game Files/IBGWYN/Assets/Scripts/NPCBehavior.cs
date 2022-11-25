@@ -6,12 +6,13 @@ using TMPro;
 
 public class NPCBehavior : MonoBehaviour
 {
-    [Header ("Settings")]
+    [Header("Settings")]
     public float wanderRadius;
     public float wanderTimer;
     public Color gizmoColor;
     public Animator anim;
     public ParticleSystem Explosion;
+    public AudioSource source;
 
 
     private NavMeshAgent agent;
@@ -19,15 +20,20 @@ public class NPCBehavior : MonoBehaviour
     private float chairtimer;
     public bool tryingToSit = true;
     public bool CanSit;
+    public bool CanTalk = true;
+    GameManager gm;
 
-    public GameObject[] chairs;
+    public GameObject[] friends;
     GameObject Target;
 
     int dialoguenum = 99;
 
     private void Awake()
     {
-        chairs = GameObject.FindGameObjectsWithTag("Chair");
+        gm = FindObjectOfType<GameManager>();
+        friends = GameObject.FindGameObjectsWithTag("NPC");
+        source = GetComponent<AudioSource>();
+        source.volume = 0;
     }
     // Use this for initialization
     void OnEnable()
@@ -40,18 +46,23 @@ public class NPCBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!CanSit)
+        if (!CanSit)
         {
             Wander();
-            if(tryingToSit)
-                findChair();
         }
         else
         {
             goToChair();
         }
-        anim.SetBool("Moving", Vector3.Distance(transform.position, agent.destination) > agent.stoppingDistance && !agent.isStopped ? true: false);
+
+        if (tryingToSit)
+            findChair();
+
+        anim.SetBool("Moving", Vector3.Distance(transform.position, agent.destination) > agent.stoppingDistance && !agent.isStopped ? true : false);
         anim.speed = agent.speed;
+
+        if(!source.isPlaying)
+            source.volume = 0;
     }
 
     void Wander()
@@ -64,33 +75,40 @@ public class NPCBehavior : MonoBehaviour
             agent.SetDestination(newPos);
             timer = 0;
         }
+
+        if (!source.isPlaying && CanTalk)
+        {
+            int i = Random.Range(0, 2);
+
+            if (i < 2)
+            {
+                source.clip = (i == 0 ? GetComponent<DataDictionary>().Moving : GetComponent<DataDictionary>().Same);
+                source.PlayOneShot(source.clip);
+            }
+        }
     }
 
     void findChair()
     {
         float smallestdist = 10;
-        foreach (GameObject t in chairs)
+        foreach (target t in gm.freechairs)
         {
-            float dist = Vector3.Distance(transform.position, t.GetComponentInChildren<target>().transform.position);
+            float dist = Vector3.Distance(transform.position, t.transform.position);
             Debug.Log(GetComponent<NPCData>().characterName + " is " + dist + " away from a chair");
             if (dist <= 5f)
-            {
-                if (!t.GetComponentInChildren<target>().used)
+            {                     
+                if (dist <= smallestdist)
                 {
-                    if (dist <= smallestdist)
+                    if(!t.used)
                     {
-                        if(Target != null)
-                            Target.GetComponent<target>().used = false;
                         smallestdist = dist;
-                        Target = t.GetComponentInChildren<target>().gameObject;
-                        Target.GetComponent<target>().used = true;
-                        Target.GetComponent<target>().NPC = gameObject;
+                        Target = t.gameObject;
+                        t.used = true;
                         CanSit = true;
-                        tryingToSit = false;
                     }
                 }
             }
-        }     
+        }
     }
 
     void goToChair()
@@ -115,6 +133,13 @@ public class NPCBehavior : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            source.volume = 0.5f;
+    }
+
     private void LateUpdate()
     {
         if(!agent.isStopped)
@@ -154,22 +179,65 @@ public class NPCBehavior : MonoBehaviour
         answer.factint = choice;
         if (choice == 0)
         {
-            answer.text = starters[Random.Range(0, starters.Length)] + target.characterName + ". They really like " + target.favoriteFood + ".";
+            answer.text = starters[Random.Range(0, starters.Length)] + target.characterName + ". They really like  to hang out in the " + target.favoriteFood + ".";
+            source.clip = GetSound(target.favoriteFood.ToLower());
         }
         else if (choice == 1)
         {
-            answer.text = starters[Random.Range(0, starters.Length)] + target.characterName + ". They're pretty " + (target.height > 1 ? "short" : target.height == 1 ? "average height" : "tall") + ".";
+            answer.text = starters[Random.Range(0, starters.Length)] + target.characterName + ". They're pretty " + (target.height > 1 ? "short" : "tall") + ".";
+            source.clip = GetSound((target.height > 1 ? "short" : "tall"));
         }
         else if (choice == 2)
         {
             answer.text = starters[Random.Range(0, starters.Length)] + target.characterName + ". They're wearing a " + (target.color2) + " shirt .";
+            source.clip = GetSound(target.color2.ToLower());
         }
         else
         {
             answer.text = "Oh, I don't know who that is...";
+            source.clip = GetSound("NOTHING");
         }
+        source.PlayOneShot(source.clip);
         return answer;
 
+    }
+
+    AudioClip GetSound(string x)
+    {
+        DataDictionary dictionary = GetComponent<DataDictionary>();
+        switch (x)
+        {
+            case "red":
+                return dictionary.RED[Random.Range(0, 3)];
+            case "green":
+                return dictionary.GREEN[Random.Range(0, 3)];
+            case "yellow":
+                return dictionary.YELLOW[Random.Range(0, 3)];
+            case "magenta":
+                return dictionary.MAGENTA[Random.Range(0, 3)];
+            case "black":
+                return dictionary.BLACK[Random.Range(0, 3)];
+            case "blue":
+                return dictionary.BLUE[Random.Range(0, 3)];
+            case "cyan":
+                return dictionary.CYAN[Random.Range(0, 3)];
+            case "white":
+                return dictionary.WHITE[Random.Range(0, 3)];
+            case "short":
+                return dictionary.Short[Random.Range(0, 2)];
+            case "tall":
+                return dictionary.Tall[Random.Range(0, 2)];
+            case "main floor":
+                return dictionary.Office;
+            case "bathroom":
+                return dictionary.Bathroom;
+            case "conference room":
+                return dictionary.Conference;
+            case "break room":
+                return dictionary.BreakRoom;
+            default:
+                return dictionary.IDontKnow[Random.Range(0, 2)];
+        }
     }
 
     #endregion
@@ -198,6 +266,19 @@ public class NPCBehavior : MonoBehaviour
     }
     IEnumerator sit()
     {
+        if (!source.isPlaying && CanTalk)
+        {
+            if (Target.transform.parent.name.Contains("Chair"))
+            {
+                source.clip = GetComponent<DataDictionary>().Workin;
+            }
+            else
+            {
+                source.clip = GetComponent<DataDictionary>().Pooping[Random.Range(0, 2)];
+            }
+            source.PlayOneShot(source.clip);
+        }
+
         yield return new WaitForSeconds(Random.Range(3, 5));
         anim.SetBool("sitting", false);
         yield return new WaitForSeconds(1f);
@@ -214,6 +295,13 @@ public class NPCBehavior : MonoBehaviour
         tryingToSit = true;
         Target.GetComponent<target>().used = false;
         Target.GetComponent<target>().NPC = null;
+    }
+
+    IEnumerator waitToTalk()
+    {
+        CanSit = false;
+        yield return new WaitForSeconds(10f);
+        CanSit = true;
     }
 
     [ExecuteAlways]

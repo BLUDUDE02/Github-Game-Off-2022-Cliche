@@ -624,6 +624,133 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1736627357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1736627358}
+  - component: {fileID: 1736627359}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1736627358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736627357}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7007150798374472264}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1736627359
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736627357}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1943606442
 GameObject:
   m_ObjectHideFlags: 0
@@ -25443,7 +25570,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e83456e0cb8abfb48883d2583cecaf48, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -25539,7 +25666,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7007150798374472264}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3374205352606105585
 MeshFilter:
@@ -26159,37 +26286,11 @@ MonoBehaviour:
   - Mcclain
   - Gallegos
   - Joyce
-  Foods:
-  - kumquats
-  - black olives
-  - spinach
-  - prawns
-  - corn syrup
-  - vegemite
-  - hoisin sauce
-  - chambord
-  - white beans
-  - duck
-  - beer
-  - feta cheese
-  - garlic
-  - cayenne pepper
-  - shitakes
-  - melons
-  - berries
-  - gorgonzola
-  - Cappuccino Latte
-  - rice
-  - tea
-  - Canadian bacon
-  - chard
-  - green onions
-  - plum tomatoes
-  - cornstarch
-  - broccoli
-  - okra
-  - paprika
-  - cream
+  Places:
+  - Break room
+  - Conference Room
+  - Main Floor
+  - Bathroom
   Colors:
   - red
   - yellow
@@ -26200,6 +26301,27 @@ MonoBehaviour:
   - black
   - magenta
   BodyTextures: []
+  RED: []
+  YELLOW: []
+  GREEN: []
+  BLUE: []
+  CYAN: []
+  WHITE: []
+  BLACK: []
+  MAGENTA: []
+  Pooping: []
+  IDontKnow: []
+  Tall: []
+  Short: []
+  BreakRoom: {fileID: 0}
+  Conference: {fileID: 0}
+  Office: {fileID: 0}
+  Bathroom: {fileID: 0}
+  Bumping: {fileID: 0}
+  Moving: {fileID: 0}
+  OhNo: {fileID: 0}
+  Same: {fileID: 0}
+  Workin: {fileID: 0}
 --- !u!1 &6333501365603161595
 GameObject:
   m_ObjectHideFlags: 0
@@ -26307,6 +26429,8 @@ MonoBehaviour:
   NPCs: []
   target: {fileID: 0}
   bullet: {fileID: 6333501365560298298}
+  chairs: []
+  freechairs: []
 --- !u!4 &6333501365855677793
 Transform:
   m_ObjectHideFlags: 0
@@ -28809,6 +28933,7 @@ Transform:
   - {fileID: 7007150798387780863}
   - {fileID: 7007150798642761727}
   - {fileID: 209413308009004507}
+  - {fileID: 1736627358}
   - {fileID: 3371951242261231662}
   m_Father: {fileID: 7007150800148376271}
   m_RootOrder: 0
@@ -29538,7 +29663,7 @@ GameObject:
   - component: {fileID: 6476976808188038859}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 5286794643320327475}
   m_Layer: 0
   m_Name: Eyes
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 293930029704889185}
   m_Layer: 0
   m_Name: Shoulder.R
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 9181012846928949222}
   m_Layer: 0
   m_Name: Hip.L
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 6192177087256050422}
   m_Layer: 0
   m_Name: Hip.R
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -493,6 +493,8 @@ GameObject:
   - component: {fileID: 1446002354308148268}
   - component: {fileID: 3677612008358324147}
   - component: {fileID: 6449709133813649719}
+  - component: {fileID: 3911289066614212410}
+  - component: {fileID: 5139626462036839708}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -554,9 +556,11 @@ MonoBehaviour:
   gizmoColor: {r: 0, g: 1, b: 0.18209982, a: 0.24705882}
   anim: {fileID: 4980864382914965786}
   Explosion: {fileID: 5732543660077996308}
+  source: {fileID: 0}
   tryingToSit: 1
   CanSit: 0
-  chairs: []
+  CanTalk: 1
+  friends: []
 --- !u!114 &1446002354308148259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,37 +669,11 @@ MonoBehaviour:
   - Mcclain
   - Gallegos
   - Joyce
-  Foods:
-  - kumquats
-  - black olives
-  - spinach
-  - prawns
-  - corn syrup
-  - vegemite
-  - hoisin sauce
-  - chambord
-  - white beans
-  - duck
-  - beer
-  - feta cheese
-  - garlic
-  - cayenne pepper
-  - shitakes
-  - melons
-  - berries
-  - gorgonzola
-  - Cappuccino Latte
-  - rice
-  - tea
-  - Canadian bacon
-  - chard
-  - green onions
-  - plum tomatoes
-  - cornstarch
-  - broccoli
-  - okra
-  - paprika
-  - cream
+  Places:
+  - Break room
+  - Conference Room
+  - Main Floor
+  - Bathroom
   Colors:
   - red
   - yellow
@@ -714,6 +692,59 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 490a9133bea4b284eb3aae1926ec7c00, type: 3}
   - {fileID: 2800000, guid: 235302b658da2f94fa9dbf6574b9796c, type: 3}
   - {fileID: 2800000, guid: 14946ca6361bdf04ab91ba685c8bc1a1, type: 3}
+  RED:
+  - {fileID: 8300000, guid: c3fcd77a583f98f42a9d6c8214d2062f, type: 3}
+  - {fileID: 8300000, guid: 6f209b9fe0660f94d84dac6ef2b2cc59, type: 3}
+  - {fileID: 8300000, guid: 3c71483842652d84f83435851efd77bb, type: 3}
+  YELLOW:
+  - {fileID: 8300000, guid: a060b16f9bc1918489f2fe93f0685e1f, type: 3}
+  - {fileID: 8300000, guid: 207d614bce4e0b54998c9db43a00a297, type: 3}
+  - {fileID: 8300000, guid: 2f0338aae0d74344fb8215f9f0bdca5b, type: 3}
+  GREEN:
+  - {fileID: 8300000, guid: 6db6ced1de703e8408aba57a330286a6, type: 3}
+  - {fileID: 8300000, guid: a672319ad7e0bd24b94b9bd0cd4e1711, type: 3}
+  - {fileID: 8300000, guid: 7e333ae5a26db5f4c980c8c6c1340ea3, type: 3}
+  BLUE:
+  - {fileID: 8300000, guid: bce5b2f6ae4b1f746b9719cb47278f9c, type: 3}
+  - {fileID: 8300000, guid: 715a595bc2c50294d8e0ff848390e0fc, type: 3}
+  - {fileID: 8300000, guid: 3db0fdd11de9b4b418bd67f74cdbabab, type: 3}
+  CYAN:
+  - {fileID: 8300000, guid: 9d5251692f3e0a041a89fa93104b7cbb, type: 3}
+  - {fileID: 8300000, guid: f32a3bb22fda0be4289ce6d97f5d8f9f, type: 3}
+  - {fileID: 8300000, guid: df98e5742e81be94d946ee98ad9a01c5, type: 3}
+  WHITE:
+  - {fileID: 8300000, guid: 63a7058b29731364b8eae0d331261f69, type: 3}
+  - {fileID: 8300000, guid: c28764df6e4426b45ac0cd55f5f80ccb, type: 3}
+  - {fileID: 8300000, guid: 156358301b26fba4697d751cbb558f54, type: 3}
+  BLACK:
+  - {fileID: 8300000, guid: d7154f03cf42deb4383ad8cd28a7bb62, type: 3}
+  - {fileID: 8300000, guid: cbcb3a9970cf551429c29517054d87a3, type: 3}
+  - {fileID: 8300000, guid: f77f8b5b62eb4d84a948773c46332424, type: 3}
+  MAGENTA:
+  - {fileID: 8300000, guid: 40639df5f15fd794e9c5299097abc662, type: 3}
+  - {fileID: 8300000, guid: 7ffbd618cb193184a99649d7bdf08b5a, type: 3}
+  - {fileID: 8300000, guid: 9615e18e9d1acf94985b481b958a8a2f, type: 3}
+  Pooping:
+  - {fileID: 8300000, guid: 585a3b888f8522e4394def7bbd8d677f, type: 3}
+  - {fileID: 8300000, guid: 6600423ca3feb064f93b4dbe5835dbff, type: 3}
+  IDontKnow:
+  - {fileID: 8300000, guid: 269fd28b0bf8af04fa87e180d683ac69, type: 3}
+  - {fileID: 8300000, guid: 7a9fb59b6f1bc214a8116b74f0cb5b3f, type: 3}
+  Tall:
+  - {fileID: 8300000, guid: d7e1210b766f41b41ab72bfe625d14c9, type: 3}
+  - {fileID: 8300000, guid: eb8509d32162f0243b8d20de80a31af6, type: 3}
+  Short:
+  - {fileID: 8300000, guid: 67d9869b946a1fd438d6fd26911f7a09, type: 3}
+  - {fileID: 8300000, guid: 4be232d8785cb4a44a70be995f36f382, type: 3}
+  BreakRoom: {fileID: 8300000, guid: ff575abf6f957ae4ab7e7e6bee01569f, type: 3}
+  Conference: {fileID: 8300000, guid: 9002afd1cac4f324cab9fce3c7d8cfbd, type: 3}
+  Office: {fileID: 8300000, guid: abd31fcaf69d1dc4bbdd96352706f6df, type: 3}
+  Bathroom: {fileID: 8300000, guid: 608b2fa6c1d2a714b9d5b89616e9df45, type: 3}
+  Bumping: {fileID: 8300000, guid: ce67c8c28251c0a419cf952803ef0769, type: 3}
+  Moving: {fileID: 8300000, guid: b37c8c6d90439f54380c975a406b9b28, type: 3}
+  OhNo: {fileID: 8300000, guid: a704da2bee2b6f346b1509a06e542245, type: 3}
+  Same: {fileID: 8300000, guid: 573dd5473697bc94da0131acd2cacd6b, type: 3}
+  Workin: {fileID: 8300000, guid: 848462bc79c79d746ad37274dcf86389, type: 3}
 --- !u!136 &6449709133813649719
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -728,6 +759,115 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!82 &3911289066614212410
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446002354308148263}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: b23a4e89867cf4f40b3b343dd1d9da7f, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 5
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!135 &5139626462036839708
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446002354308148263}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1446002354817653171
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,7 +879,7 @@ GameObject:
   - component: {fileID: 1446002354817653180}
   m_Layer: 0
   m_Name: Body
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -892,7 +1032,7 @@ GameObject:
   - component: {fileID: 4557485379987288998}
   m_Layer: 0
   m_Name: Armature
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -924,7 +1064,7 @@ GameObject:
   - component: {fileID: 6554987435596233578}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1109,7 +1249,7 @@ GameObject:
   - component: {fileID: 447029477300808577}
   m_Layer: 0
   m_Name: Head
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1252,7 +1392,7 @@ GameObject:
   - component: {fileID: 2220969519103668165}
   m_Layer: 0
   m_Name: Body 1
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1391,7 +1531,7 @@ GameObject:
   - component: {fileID: 4980864382914965786}
   m_Layer: 0
   m_Name: Character Body
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1443,7 +1583,7 @@ GameObject:
   - component: {fileID: 5955064389551643009}
   m_Layer: 0
   m_Name: Body
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1549,7 +1689,7 @@ GameObject:
   - component: {fileID: 8640904621419958389}
   m_Layer: 0
   m_Name: Hips
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60105,7 +60245,7 @@ GameObject:
   - component: {fileID: 6364114830589030550}
   m_Layer: 0
   m_Name: Main Control
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60205,7 +60345,7 @@ GameObject:
   - component: {fileID: 162096205189915763}
   m_Layer: 0
   m_Name: Shoulder.L
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
