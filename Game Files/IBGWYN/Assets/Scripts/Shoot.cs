@@ -43,7 +43,7 @@ public class Shoot : MonoBehaviour
                 {
                     GetComponent<Interaction>().Won();
                 }
-                hitinfo.transform.GetComponentInParent<NPCBehavior>().Die(hitinfo.point);
+                hitinfo.transform.GetComponentInParent<NPCRoutines>().Die(hitinfo.point);
             }
             else
             {

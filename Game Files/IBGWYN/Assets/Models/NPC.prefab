@@ -488,13 +488,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1446002354308148256}
   - component: {fileID: 1446002354308148257}
-  - component: {fileID: 1446002354308148258}
+  - component: {fileID: 26943652789400720}
   - component: {fileID: 1446002354308148259}
   - component: {fileID: 1446002354308148268}
   - component: {fileID: 3677612008358324147}
   - component: {fileID: 6449709133813649719}
   - component: {fileID: 3911289066614212410}
-  - component: {fileID: 5139626462036839708}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -539,7 +538,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1446002354308148258
+--- !u!114 &26943652789400720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -548,19 +547,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1446002354308148263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cfd9d0cd05662e45b13383f43878217, type: 3}
+  m_Script: {fileID: 11500000, guid: 60b8d08fd720b064982eda9c366e5997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderRadius: 24.08
-  wanderTimer: 5
-  gizmoColor: {r: 0, g: 1, b: 0.18209982, a: 0.24705882}
-  anim: {fileID: 4980864382914965786}
-  Explosion: {fileID: 5732543660077996308}
-  source: {fileID: 0}
-  tryingToSit: 1
-  CanSit: 0
-  CanTalk: 1
-  friends: []
 --- !u!114 &1446002354308148259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,19 +844,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!135 &5139626462036839708
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446002354308148263}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1446002354817653171
 GameObject:
   m_ObjectHideFlags: 0

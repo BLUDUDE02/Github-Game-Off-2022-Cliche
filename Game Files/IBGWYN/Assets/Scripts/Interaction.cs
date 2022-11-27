@@ -54,7 +54,7 @@ public class Interaction : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E))
             {
                 
-                NPCBehavior activeNPC = hitinfo.transform.GetComponentInParent<NPCBehavior>();
+                NPCRoutines activeNPC = hitinfo.transform.GetComponentInParent<NPCRoutines>();
                 fact Question = activeNPC.GenerateFact(gm.target);
                 
                 if(!factsobtained.Contains(Question.factint) && Question.factint < 3)
