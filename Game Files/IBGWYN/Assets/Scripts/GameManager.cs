@@ -17,17 +17,29 @@ public class GameManager : MonoBehaviour
     public List<target> OfficeChairs = new List<target>();
     public List<target> Toilets = new List<target>();
     public List<target> Tables = new List<target>();
-    PlayerMovement player;
+    public PlayerMovement player;
+    public AudioSource Boss;
+    public AudioClip clip;
+    public AudioClip[] clips;
+    public Camera cam;
+    public GameObject gun;
 
 
     // Start is called before the first frame update
     void Awake()
     {
+        if(PlayerPrefs.GetInt("TimesPlayed") == 0)
+        {
+            clip = clips[0];
+        }
+        else
+        {
+            clip = clips[Random.Range(1, 3)];
+        }
+        PlayerPrefs.SetInt("TimesPlayed", 1);
+        PlayerPrefs.Save();
         player = FindObjectOfType<PlayerMovement>();
-
-        for (int i = 0; i<Quantity; i++)
-            Invoke("spawnInCircle",0);
-        StartCoroutine(setup());
+        StartCoroutine(cutscene());
 
         target[] targets = FindObjectsOfType<target>();
         foreach(target t in targets)
@@ -96,5 +108,31 @@ public class GameManager : MonoBehaviour
         target = NPCs[0];
         target.isTarget = true;
         bullet.text = target.characterName;
+    }
+
+    IEnumerator cutscene()
+    {
+        player.enabled = false;
+        gun.SetActive(false);
+        cam.GetComponent<MouseLook>().enabled = false;
+        Boss.PlayOneShot(clip);
+        if(clip == clips[0])
+        {
+            yield return new WaitForSeconds(clip.length - 26);
+        }
+        gun.SetActive(true);
+        if (clip == clips[0])
+        {
+            yield return new WaitForSeconds(26);
+        }
+        else
+        {
+            yield return new WaitForSeconds(5);
+        }
+        player.enabled = true;
+        cam.GetComponent<MouseLook>().enabled = true;
+        for (int i = 0; i < Quantity; i++)
+            Invoke("spawnInCircle", 0);
+        StartCoroutine(setup());
     }
 }

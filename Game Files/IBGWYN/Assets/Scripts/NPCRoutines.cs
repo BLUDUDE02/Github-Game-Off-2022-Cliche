@@ -259,6 +259,7 @@ public class NPCRoutines : MonoBehaviour
     {
         Explosion.gameObject.transform.parent = null;
         gameManager.NPCs.Remove(GetComponent<NPCData>());
+        gameManager.NPCInRange.Remove(GetComponent<NPCData>());
         foreach (Component child in GetComponentsInChildren(typeof(Component)))
         {
             Destroy(child.gameObject);

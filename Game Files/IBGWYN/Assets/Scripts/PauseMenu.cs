@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -8,19 +9,26 @@ public class PauseMenu : MonoBehaviour
     public GameObject OptionsMenuUI;
     public GameObject HUDUI;
 
-    bool pause;
+    bool pause = true;
     bool optionsMode;
+    bool MainMenu = true;
 
     private void Start()
     {
-        HUDUI.SetActive(true);
-        pauseMenuUI.SetActive(false);
+        if(HUDUI != null)
+        {
+            MainMenu = false;
+            HUDUI.SetActive(true);
+            pause = false;
+        }
+        
+        pauseMenuUI.SetActive(pause);
         OptionsMenuUI.SetActive(false);
     }
 
     private void Update()
     {
-        if(!optionsMode)
+        if(!optionsMode && !MainMenu)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -36,6 +44,14 @@ public class PauseMenu : MonoBehaviour
             AudioListener.pause = pause;
 
             Time.timeScale = pause ? 0 : 1;
+        }
+
+        if(optionsMode)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Back();
+            }
         }
     }
 
@@ -56,6 +72,11 @@ public class PauseMenu : MonoBehaviour
         optionsMode = false;
         OptionsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(true);
+    }
+
+    public void Play()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void volume(float newValue)
