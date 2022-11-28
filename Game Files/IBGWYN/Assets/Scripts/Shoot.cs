@@ -35,7 +35,6 @@ public class Shoot : MonoBehaviour
         RaycastHit hitinfo;
         if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hitinfo, range, layer))
         {
-            Debug.Log(hitinfo.transform.name);
             if (hitinfo.transform.CompareTag("NPC"))
             {
                 Instantiate(bulletHole2, hitinfo.point, Quaternion.LookRotation(hitinfo.normal), hitinfo.transform);

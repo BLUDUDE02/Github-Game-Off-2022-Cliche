@@ -5,19 +5,21 @@ using UnityEngine.AI;
 
 public class NPCRoutines : MonoBehaviour
 {
-    int currentAction = 5;
+    public target T;
+
+    public int currentAction = 0;
+    int i = 0;
     int dialogueNum = 99;
 
-    bool sittingOnChair;
-    bool sittingOnToilet;
-    bool walking;
+    public bool isCoolToMove = true;
+    public bool cr;
 
     Animator anim;
     ParticleSystem Explosion;
     AudioSource source;
     NavMeshAgent agent;
     GameManager gameManager;
-    target T;
+    
     DataDictionary dictionary;
 
     #region Setup
@@ -29,8 +31,6 @@ public class NPCRoutines : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         gameManager = FindObjectOfType<GameManager>();
         dictionary = GetComponent<DataDictionary>();
-
-        NextAction();
     }
     #endregion
 
@@ -38,36 +38,37 @@ public class NPCRoutines : MonoBehaviour
     //Selecting Next Action
     void NextAction()
     {
-        int i = Random.Range(0, 5);
-
+        isCoolToMove = false;
+        agent.enabled = false;
+        if(T != null) T.NPC = null;
+        T = null;
+        i = Random.Range(0, 5);
+        if(i == currentAction)
+        {
+            i += 1;
+        }
         HeadToNextActivity(i);
     }
     //Navigate Between
     void HeadToNextActivity(int i)
     {
-        findTarget(i);
-        if(T != null)
-        {
-            Navigate();
-        }
-        else
-        {
-            StartCoroutine(acting(3));
-        }
+        if (findTarget(i)) Navigate();
     }
-    void findTarget(int i)
+    bool findTarget(int i)
     {
-        switch(i)
+        switch (i)
         {
             case 0:
-                foreach(target t in gameManager.OfficeChairs)
+                foreach (target t in gameManager.OfficeChairs)
                 {
-                    if(t.NPC == null)
+                    if (t.NPC == null)
                     {
                         T = t;
-                        break;
+                        T.NPC = this.gameObject;
+                        currentAction = i;
+                        Debug.Log(GetComponent<NPCData>().characterName + " has found a target");
+                        return true;
                     }
-                        
                 }
                 break;
             case 1:
@@ -76,7 +77,10 @@ public class NPCRoutines : MonoBehaviour
                     if (t.NPC == null)
                     {
                         T = t;
-                        break;
+                        T.NPC = this.gameObject;
+                        currentAction = i;
+                        Debug.Log(GetComponent<NPCData>().characterName + " has found a target");
+                        return true;
                     }
                 }
                 break;
@@ -86,50 +90,55 @@ public class NPCRoutines : MonoBehaviour
                     if (t.NPC == null)
                     {
                         T = t;
-                        break;
+                        T.NPC = this.gameObject;
+                        currentAction = i;
+                        Debug.Log(GetComponent<NPCData>().characterName + " has found a target");
+                        return true;
                     }
                 }
                 break;
         }
-        if(T != null)
-        {
-            if (T.NPC == null)
-            {
-                T.NPC = this.gameObject;
-                currentAction = i;
-            }
-            else T = null;
-        }
+        Debug.Log(GetComponent<NPCData>().characterName + " has not found a target");
+        return false;
     }
+    
     //Moving
     void Navigate()
     {
+        agent.enabled = true;
         agent.SetDestination(T.transform.position);
-    }
-
-    void PerformTask()
-    {
-        if(T != null)
-        {
-            agent.isStopped = true;
-            transform.position = T.transform.position;
-            transform.rotation = T.transform.rotation;
-
-            if (currentAction < 2) anim.SetBool("sitting", true);
-            else anim.SetBool("Moving", false);
-        }
-        StartCoroutine(acting(Random.Range(8, 15)));
     }
 
     private void Update()
     {
-        anim.SetBool("Moving", Vector3.Distance(transform.position, agent.destination) > agent.stoppingDistance && !agent.isStopped ? true : false);
+        anim.SetBool("Moving", Vector3.Distance(transform.position, agent.destination) > agent.stoppingDistance && agent.enabled ? true : false);
         anim.speed = agent.speed;
+    }
 
-        if (agent.remainingDistance <= agent.stoppingDistance)
+    private void FixedUpdate()
+    {
+        
+        
+        if (isCoolToMove)
         {
-            PerformTask();
+            NextAction();
         }
+        if (agent.enabled && !agent.pathPending)
+        {
+            Vector3 destination = agent.destination;
+            Debug.Log((agent.enabled) + " " + (Vector3.Distance(agent.destination, T.transform.position) <= 0.02f) + " " + (agent.remainingDistance <= agent.stoppingDistance + 0.02f));
+            if (Vector3.Distance(agent.destination, T.transform.position) <= 0.02f && agent.remainingDistance <= agent.stoppingDistance + 0.02f)
+            {
+                agent.enabled = false;
+                transform.position = T.transform.position;
+                transform.rotation = T.transform.rotation;
+
+                if (currentAction < 2) anim.SetBool("sitting", true);
+                else anim.SetBool("Moving", false);
+                if (!cr) StartCoroutine(acting(Random.Range(5, 10)));
+            }
+        }
+        
     }
 
     public void Speak()
@@ -261,16 +270,19 @@ public class NPCRoutines : MonoBehaviour
     #region Coroutines
     IEnumerator stopForASec()
     {
-        agent.isStopped = true;
         yield return new WaitForSeconds(source.clip != null ? source.clip.length : 3f);
-        agent.isStopped = false;
+        agent.enabled = true;
         StartCoroutine(acting(Random.Range(4, 10)));
     }
 
     IEnumerator acting(int x)
     {
+        Debug.Log("acting() has been called for " + GetComponent<NPCData>().characterName);
+        cr = true;
         yield return new WaitForSeconds(x);
-        NextAction();
+        anim.SetBool("sitting", false);
+        isCoolToMove = true;
+        cr = false;
     }
     #endregion
 }

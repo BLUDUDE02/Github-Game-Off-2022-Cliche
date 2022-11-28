@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
             
         }
 
-        if(!talking)
+        if(!talking && NPCInRange.Count > 0)
         {
             getNPCThatCanSpeak();
         }

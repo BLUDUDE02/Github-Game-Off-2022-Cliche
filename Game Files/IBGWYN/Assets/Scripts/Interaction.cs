@@ -36,7 +36,6 @@ public class Interaction : MonoBehaviour
         RaycastHit hitinfo;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hitinfo, range))
         {
-            Debug.Log("Raycast hit");
             if (hitinfo.transform.CompareTag("NPC"))
             {
                 talk = true;
